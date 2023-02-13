@@ -39,7 +39,3 @@ def get_cover():
     # print(data.get("songs"))    
 
     return { "url": "https://res.cloudinary.com/dnloqwpl4/image/upload/v1676315203/nk59x5xqgziog5lngufh.jpg" }
-
-if __name__ == '__main__':
-    # run app in debug mode on port 5000
-    app.run(debug=True, port=PORT)
