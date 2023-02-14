@@ -11,7 +11,7 @@ pipe.enable_attention_slicing()
 
 def get_cover_image(query):
     identifier = uuid.uuid4()
-    image = pipe(query, num_inference_steps=100, negative_prompt="words, letters, title").images[0]
+    image = pipe(query, num_inference_steps=50, negative_prompt="words, letters, title", width=400, height=400).images[0]
     file_path = f"{TMP_PATH}/{identifier}.jpg"
     image.save(file_path)
     return file_path
