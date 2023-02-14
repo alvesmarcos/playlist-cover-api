@@ -2,6 +2,7 @@ import asyncio
 import aiohttp 
 from flask import Flask
 from flask import request
+from flask_ngrok import run_with_ngrok
 
 from get_genres import get_songs_genres
 from prompt import generate_prompt
@@ -12,6 +13,8 @@ app = Flask(__name__)
 
 APP_VERSION = "v1"
 PORT = 5000
+
+run_with_ngrok(app)
 
 @app.route("/")
 def home():
@@ -34,3 +37,6 @@ async def handler_get_cover(title, description, songs):
     path = get_cover_image(prompt)
     url = upload_image(path)
     return url
+
+if __name__ == '__main__':
+    app.run()
