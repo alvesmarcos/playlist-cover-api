@@ -39,4 +39,4 @@ async def handler_get_cover(title, description, songs):
     return url
 
 if __name__ == '__main__':
-    app.run()
+    app.run(debug =True)
