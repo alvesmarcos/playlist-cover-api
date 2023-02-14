@@ -6,7 +6,7 @@ TMP_PATH = "./tmp"
 MODELS_PATH = "./models"
 
 pipe = StableDiffusionPipeline.from_pretrained(f"{MODELS_PATH}/stable-diffusion-v1-4", torch_dtype=torch.float16)
-pipe = pipe.to("mps")
+pipe = pipe.to("cuda")
 pipe.enable_attention_slicing()
 
 def get_cover_image(query):
